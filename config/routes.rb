@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :articles
   resources :pinboards
   root 'pinboards#index'
   # The priority is based upon order of creation: first created -> highest priority.

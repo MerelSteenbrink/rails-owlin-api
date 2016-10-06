@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161006083548) do
+ActiveRecord::Schema.define(version: 20161006105253) do
+
+  create_table "articles", force: :cascade do |t|
+    t.string   "title"
+    t.text     "content"
+    t.integer  "pinboard_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "articles", ["pinboard_id"], name: "index_articles_on_pinboard_id"
 
   create_table "pinboards", force: :cascade do |t|
     t.string   "user"
