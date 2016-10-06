@@ -3,7 +3,7 @@ class CreatePinboards < ActiveRecord::Migration
     create_table :pinboards do |t|
       t.string :user
       t.integer :epoch
-      t.array :articles
+      t.string :articles
 
       t.timestamps null: false
     end
