@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Pinboards</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Epoch</th>
+      <th>Articles</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pinboards.each do |pinboard| %>
+      <tr>
+        <td><%= pinboard.user %></td>
+        <td><%= pinboard.epoch %></td>
+        <td><%= pinboard.articles %></td>
+        <td><%= link_to 'Show', pinboard %></td>
+        <td><%= link_to 'Edit', edit_pinboard_path(pinboard) %></td>
+        <td><%= link_to 'Destroy', pinboard, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Pinboard', new_pinboard_path %>

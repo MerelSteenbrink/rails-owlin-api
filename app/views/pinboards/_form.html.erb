@@ -1,0 +1,29 @@
+<%= form_for(@pinboard) do |f| %>
+  <% if @pinboard.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@pinboard.errors.count, "error") %> prohibited this pinboard from being saved:</h2>
+
+      <ul>
+      <% @pinboard.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :user %><br>
+    <%= f.text_field :user %>
+  </div>
+  <div class="field">
+    <%= f.label :epoch %><br>
+    <%= f.number_field :epoch %>
+  </div>
+  <div class="field">
+    <%= f.label :articles %><br>
+    <%= f.text_field :articles %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
